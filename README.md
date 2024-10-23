@@ -30,6 +30,11 @@ for example
     "candidate_level": "junior"
 }
 ```
+To tun tests with coverage check:
+```
+pytest --cov=. --cov-report html
+```
+
 
 
 Caching works as follows: it checks whether a request has already been made with the same repository, the latest commit (no updates in the repository), and the developer's level. If such a request was made before, the previously saved review is returned.
