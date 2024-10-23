@@ -21,7 +21,6 @@ class ChatGPTClient:
         prompt = self.create_prompt(candidate_level, files_text)
         logger.info(f"Generated prompt: \n {prompt}")
 
-        # print("promptprompt: ", prompt)
         attempts = 3
         response = None
 
@@ -39,8 +38,6 @@ class ChatGPTClient:
 
         logger.info(f"ChatGPT response: \n {response['choices'][0]['message']['content']}")
         return response['choices'][0]['message']['content']
-        # return response['choices'][0]['message']['content']
-        # return prompt
 
     async def send_request(self, prompt):
         return openai.ChatCompletion.create(

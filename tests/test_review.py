@@ -18,7 +18,8 @@ async def test_review_positive(redis_mock_client, app_client):
 
 @pytest.mark.asyncio
 async def test_cache(redis_mock_client, app_client):
-    redis_mock_client.get.return_value = '{"found_files": "files_list", "review_result": "some feedback"}'
+    redis_mock_client.get.return_value = '{"found_files": "files_list", ' \
+                                         '"review_result": "some feedback"}'
     redis_mock_client.setex.return_value = None
 
     data = {
