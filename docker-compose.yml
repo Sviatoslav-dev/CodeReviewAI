@@ -1,0 +1,19 @@
+version: "3.8"
+
+services:
+  redis:
+    image: "redis:alpine"
+    container_name: "fastapi_redis"
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - fastapi_network
+
+volumes:
+  redis_data:
+
+networks:
+  fastapi_network:
+    driver: bridge
